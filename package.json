@@ -1,0 +1,19 @@
+{
+  "name": "food-bridge",
+  "version": "1.0.0",
+  "description": "FoodBridge — Sustainable Surplus Food Recovery & Redistribution Network",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "food-recovery",
+    "sustainability",
+    "glassmorphism",
+    "claymorphism",
+    "motion-design"
+  ],
+  "author": "FoodBridge Team",
+  "license": "MIT"
+}

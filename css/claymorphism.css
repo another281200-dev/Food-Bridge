@@ -1,0 +1,129 @@
+.clay-category-btn {
+  background: var(--color-surface-pure);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: all var(--duration-normal) var(--ease-human);
+  user-select: none;
+  text-align: center;
+}
+
+.clay-category-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-medium);
+  box-shadow: var(--shadow-card-hover);
+  background: #FFFFFF;
+}
+
+.clay-category-btn.active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(21, 128, 61, 0.1);
+}
+
+.clay-category-btn .cat-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: all var(--duration-fast) var(--ease-human);
+}
+
+.clay-category-btn:hover .cat-icon-box {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.clay-category-btn.active .cat-icon-box {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.clay-category-btn .cat-label {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.2;
+}
+
+.clay-category-btn .cat-count {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.human-badge, .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.human-badge-green, .status-badge-available, .status-badge-approved {
+  background: var(--status-available-bg);
+  color: var(--status-available-text);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+.human-badge-amber, .status-badge-pending, .status-badge-review {
+  background: var(--status-urgent-bg);
+  color: var(--status-urgent-text);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.human-badge-red, .status-badge-rejected, .status-badge-scam {
+  background: var(--status-critical-bg);
+  color: var(--status-critical-text);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.human-badge-orange, .status-badge-accent {
+  background: var(--color-accent-light);
+  color: var(--color-accent-text);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.human-badge-stone {
+  background: var(--color-surface-subtle);
+  color: var(--color-text-body);
+  border: 1px solid var(--color-border);
+}
+
+.community-invite-card {
+  background: var(--color-surface-pure);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.community-invite-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Surplus Food — FoodBridge Donor Intake Portal</title>
+  <meta name="description" content="List surplus food for same-day pickup by verified langars, community kitchens, and shelters across Lucknow. AI freshness scanner & fraud-screened.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/claymorphism.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modern2026.css">
+</head>
+<body>
+
+  <header class="site-header" id="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link" id="brand-logo">
+        <div class="brand-icon-box" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span>FoodBridge</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="main-nav-links">
+          <li><a href="available-food.html" class="nav-link">Available Food</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="map.html" class="nav-link">Lucknow Map</a></li>
+          <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+          <li><a href="safety.html" class="nav-link">Food Safety</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn-nav-ghost" id="nav-login-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Log In</span>
+        </a>
+        <a href="signup.html" class="btn-nav-signup" id="nav-signup-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <line x1="19" y1="8" x2="19" y2="14"></line>
+            <line x1="22" y1="11" x2="16" y2="11"></line>
+          </svg>
+          <span>Sign Up</span>
+        </a>
+
+        <a href="donate.html" class="btn btn-accent" id="nav-btn-donate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <span>Donate Food</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 3.5rem 0 5rem;">
+    <div class="container" style="max-width: 860px;">
+      
+      <div style="margin-bottom: 2rem;" class="reveal-init">
+        <div class="hero-eyebrow">
+          <span>AI-Verified Food Rescue Portal</span>
+        </div>
+        <h1 style="font-size: 2.75rem; margin-bottom: 0.5rem; color: var(--color-secondary);">
+          List Surplus Food for Rescue
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--color-text-muted);">
+          Takes under 2 minutes. Scan your surplus food with our AI Quality Engine, pass instant fraud verification, and dispatch an e-rickshaw volunteer to a nearby Lucknow langar or shelter.
+        </p>
+      </div>
+
+      <!-- Feature 1: AI Food Freshness & Quality Scanner -->
+      <section class="ai-scanner-card reveal-init" id="ai-scanner-section">
+        <div class="ai-card-header">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span class="ai-badge-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Feature 1: AI Vision Freshness Scanner
+            </span>
+            <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Multimodal Spoilage &amp; Safety Audit</span>
+          </div>
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-primary); background: var(--color-primary-light); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm);" id="ai-engine-badge">
+            Gemini Vision / Neural Engine
+          </span>
+        </div>
+
+        <div class="ai-scanner-grid">
+          <div>
+            <div class="ai-viewport-box" id="scanner-dropzone" onclick="document.getElementById('food-image-input').click()">
+              <div class="ai-scan-laser" id="scanner-laser"></div>
+              <img id="scanner-preview-img" class="ai-viewport-img" alt="Scanned Food Preview">
+              <div class="ai-viewport-placeholder" id="scanner-placeholder">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+                <div style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-body);">Upload or Drop Photo</div>
+                <div style="font-size: 0.75rem;">Click to browse JPG/PNG</div>
+              </div>
+              <input type="file" id="food-image-input" accept="image/*" style="display: none;">
+            </div>
+
+            <div style="margin-top: 0.85rem;">
+              <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted); display: block; margin-bottom: 0.35rem;">
+                Or test with verified Lucknow samples:
+              </span>
+              <div class="ai-sample-strip">
+                <button type="button" class="ai-sample-btn" data-sample="thali">🍛 Banquet Thali</button>
+                <button type="button" class="ai-sample-btn" data-sample="mandi">🥬 Mandi Veggies</button>
+                <button type="button" class="ai-sample-btn" data-sample="bakery">🥖 Bakery Pav</button>
+                <button type="button" class="ai-sample-btn" data-sample="spoiled" style="color: var(--color-danger);">⚠️ Spoiled Test</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-results-panel" id="scanner-results-box">
+            <div class="ai-score-row">
+              <div>
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); display: block;">
+                  AI Freshness Index
+                </span>
+                <div style="display: flex; align-items: baseline; gap: 0.35rem;">
+                  <span class="ai-score-badge" id="ai-freshness-num">96</span>
+                  <span style="font-size: 1rem; color: var(--color-text-muted); font-weight: 600;">/100</span>
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <span class="status-badge status-badge-available" id="ai-freshness-status-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Prime Langar Grade
+                </span>
+                <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.35rem;" id="ai-detected-name">
+                  Fresh Banquet Meal (Thali &amp; Dal)
+                </div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <div style="background: #FFFFFF; border: 1px solid var(--color-border); padding: 0.6rem 0.85rem; border-radius: var(--radius-md);">
+                <div style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase;">Safe Window</div>
+                <div style="font-size: 0.9375rem; font-weight: 700; color: var(--color-secondary);" id="ai-safe-window">5.0 Hours Left</div>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid var(--color-border); padding: 0.6rem 0.85rem; border-radius: var(--radius-md);">
+                <div style="font-size: 0.7rem; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase;">Thermal State</div>
+                <div style="font-size: 0.9375rem; font-weight: 700; color: var(--color-primary);" id="ai-rec-temp">Above 60°C (Hot Hold)</div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.35rem;">
+              Vision Audit Signals
+            </div>
+            <ul class="ai-obs-list" id="ai-observations-list">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Clean commercial packaging with steam retention lids</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>No moisture pooling, separation or discolored fats</span>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Prepared under standard commercial FSSAI guidelines</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-secondary" id="btn-autofill-ai" style="width: 100%; margin-top: 0.5rem; padding: 0.5rem; font-size: 0.8125rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+              <span>Auto-fill Form with AI Detection</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature 2: Real-time AI Scam & Fraud Screening -->
+      <section class="ai-trust-widget reveal-init" id="ai-trust-widget">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.65rem;">
+            <span class="ai-badge-pill" style="background: rgba(30, 42, 94, 0.08); color: var(--color-secondary);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Feature 2: Real-time AI Scam &amp; Fraud Guard
+            </span>
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--color-text-body);" id="trust-headline">
+              Donor Legitimacy Check
+            </span>
+          </div>
+          <span class="status-badge status-badge-available" id="trust-badge-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span id="trust-badge-text">AI Verified Safe</span>
+          </span>
+        </div>
+
+        <div class="ai-trust-bar-bg">
+          <div class="ai-trust-bar-fill" id="trust-bar-fill" style="width: 98%;"></div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8125rem; color: var(--color-text-muted);">
+          <span id="trust-score-label">Trust Score: <strong>98% Pass</strong></span>
+          <span id="trust-risk-level">Risk Level: <strong>Low</strong></span>
+        </div>
+
+        <div style="margin-top: 0.5rem; font-size: 0.775rem; color: var(--color-text-body);" id="trust-reasons-summary">
+          ✓ Passed all AI trust &amp; FSSAI legitimacy benchmarks with zero fraud flags.
+        </div>
+      </section>
+
+      <!-- Donation Intake Form -->
+      <form id="surplus-donation-form" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2.5rem; box-shadow: var(--shadow-card);" class="reveal-init">
+
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-secondary);">1. Business &amp; Location</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="business-name">Business / Donor Name</label>
+            <input type="text" id="business-name" required placeholder="e.g. Oudh Heritage Banquet, Hazratganj" value="Oudh Heritage Banquet, Hazratganj">
+          </div>
+
+          <div>
+            <label for="contact-phone">Contact Phone / Cell</label>
+            <input type="tel" id="contact-phone" required placeholder="e.g. 9415012345" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" value="9415088211">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <label for="pickup-address">Pickup Street Address &amp; Bay</label>
+          <input type="text" id="pickup-address" required placeholder="e.g. 14 MG Road, Hazratganj, Lucknow — Kitchen Loading Bay" value="14 MG Road, Hazratganj, Lucknow — Kitchen Loading Bay">
+        </div>
+
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-secondary);">2. Food Inventory</h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="food-category">Food Category</label>
+            <select id="food-category" required>
+              <option value="prepared" selected>Banquet Meals (Thali, Biryani, Dal, Sabzi)</option>
+              <option value="produce">Sabzi / Fresh Produce (Mandi Vegetables, Fruits)</option>
+              <option value="bakery">Bakery &amp; Breads (Naan, Pav, Roti, Rusk)</option>
+              <option value="dairy">Dairy (Doodh, Paneer, Dahi, Makkhan)</option>
+              <option value="pantry">Dry Staples (Atta, Chawal, Dal, Oil)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="food-weight">Estimated Net Weight / Portions</label>
+            <input type="text" id="food-weight" required placeholder="e.g. 40 kg (85 meal thalis)" value="40 kg (85 meal thalis)">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <label for="food-description">Batch Description &amp; Packaging</label>
+          <textarea id="food-description" required rows="3" placeholder="e.g. 80 fresh rotis, 15 kg dal tadka, and 20 kg vegetable pulao from wedding banquet. Packed in steel degchis with lids.">85 fresh thali meals packed in leaf boxes with dal tadka and vegetable pulao. Prepared 2 hours ago under clean commercial supervision.</textarea>
+        </div>
+
+        <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-secondary);">3. Storage Safety &amp; Pickup Window</h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="current-temp">Current Temperature State</label>
+            <select id="current-temp" required>
+              <option value="hot" selected>Hot Hold Safe (Above 140°F / 60°C)</option>
+              <option value="room">Room Temp — Breads, Produce, Dry Goods</option>
+              <option value="chilled">Refrigerated Safe (Below 40°F / 4°C)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="pickup-window">Available Pickup Window</label>
+            <input type="text" id="pickup-window" required placeholder="e.g. Today, 3:30 PM to 6:30 PM" value="Today, 3:30 PM to 6:30 PM">
+          </div>
+        </div>
+
+        <div style="background: var(--color-canvas-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 2rem;">
+          <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+            <input type="checkbox" id="terms-check" checked required style="margin-top: 0.25rem; width: 18px; height: 18px; accent-color: var(--color-primary);">
+            <span style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">
+              I confirm this surplus food is wholesome, unadulterated, and handled under safe FSSAI temperature guidelines. I understand this donation is protected under the FSSAI Surplus Food Redistribution Regulations and the Indian Good Samaritan legal framework.
+            </span>
+          </label>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <button type="button" class="btn btn-secondary" id="btn-preview-match">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span>Preview AI Hub Match</span>
+          </button>
+
+          <button type="submit" class="btn btn-primary" id="btn-submit-listing" style="padding: 0.85rem 1.85rem; font-size: 1rem;">
+            <span>Publish &amp; Dispatch Volunteer</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Feature 3: Smart NGO & Dharamshala Matching Modal -->
+  <div class="ai-match-modal-backdrop" id="ai-match-modal">
+    <div class="ai-match-modal-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <span class="ai-badge-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Feature 3: AI Smart Match Engine
+          </span>
+          <span style="font-weight: 700; color: var(--color-secondary);">Optimal Lucknow Hub</span>
+        </div>
+        <button type="button" id="close-match-modal-btn" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted); line-height: 1;">&times;</button>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <span style="font-size: 0.8125rem; color: var(--color-text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.04em;">Matched Destination</span>
+        <h2 style="font-size: 1.5rem; color: var(--color-secondary); margin: 0.25rem 0;" id="match-hub-name">Yahiyaganj Langar Sewa</h2>
+        <div style="font-size: 0.9375rem; color: var(--color-text-body);" id="match-hub-location">Chowk, Old Lucknow • 1.4 km from Hazratganj</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+        <div style="background: #F9FAFB; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem;">
+          <div style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 600;">TRANSIT LOGISTICS</div>
+          <div style="font-size: 1rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;" id="match-transit">Electric Rickshaw #E-42</div>
+          <div style="font-size: 0.75rem; color: var(--color-text-muted);" id="match-eta">Estimated ETA: 18 minutes</div>
+        </div>
+
+        <div style="background: #F9FAFB; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem;">
+          <div style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 600;">RECIPIENT CONTACT</div>
+          <div style="font-size: 1rem; font-weight: 700; color: var(--color-secondary); margin-top: 0.25rem;" id="match-contact">Sevadar Harpreet Singh</div>
+          <div style="font-size: 0.75rem; color: var(--color-text-muted);">Serving 250 thalis nightly</div>
+        </div>
+      </div>
+
+      <div style="background: var(--color-primary-light); border: 1px solid rgba(21, 128, 61, 0.2); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase;">Why AI Matched This Hub</div>
+        <p style="font-size: 0.875rem; color: var(--color-text-body); margin-top: 0.25rem;" id="match-rationale">
+          Immediate capacity for 85 banquet thalis before the 7:30 PM evening langar. Shortest transit route across Gomti bridge avoiding Hazratganj evening peak traffic.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1rem; background: #F9FAFB; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Digital Handover Pass</div>
+          <div style="font-size: 0.8125rem; color: var(--color-text-body);">Show this secure OTP to the courier at pickup</div>
+        </div>
+        <div class="ai-otp-display" id="match-otp-code">7492</div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 1rem;">
+        <a href="map.html" class="btn btn-secondary" style="font-size: 0.875rem;">
+          View on Lucknow Map
+        </a>
+        <button type="button" class="btn btn-primary" id="confirm-match-btn" style="font-size: 0.875rem;">
+          Confirm &amp; Dispatch Courier
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <div class="footer-brand">FoodBridge Lucknow</div>
+          <p style="font-size: 0.875rem; line-height: 1.6; max-width: 32ch; margin-bottom: 1rem;">
+            A grassroots food recovery network connecting surplus food from Lucknow banquet halls, bakeries, and mandis with local families, langars, and community shelters.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links-list">
+            <li><a href="available-food.html">Available Food</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="map.html">Lucknow Map</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="safety.html">Food Safety</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Lucknow Recovery Hubs</h4>
+          <ul class="footer-links-list">
+            <li><a href="map.html">Yahiyaganj Langar Sewa (Chowk)</a></li>
+            <li><a href="map.html">Gomti Nagar Community Fridge</a></li>
+            <li><a href="map.html">Hazratganj Relief Kitchen</a></li>
+            <li><a href="map.html">Charbagh Station Shelter</a></li>
+            <li><a href="map.html">Dubagga Mandi Recovery Point</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">FSSAI &amp; Safety</h4>
+          <p style="font-size: 0.8125rem; line-height: 1.6; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem;">
+            Food donations in India are governed by the FSSAI Surplus Food Regulations and shielded under Good Samaritan laws.
+          </p>
+          <a href="safety.html" style="font-size: 0.8125rem; font-weight: 600; color: #22C55E;">
+            Read Safe Food Guidelines &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 FoodBridge Lucknow. Open-access civic surplus food recovery platform.
+        </div>
+        <div style="display: flex; gap: 1.25rem;">
+          <a href="safety.html" style="color: rgba(255, 255, 255, 0.6); font-size: 0.75rem;">FSSAI Compliance</a>
+          <a href="impact.html" style="color: rgba(255, 255, 255, 0.6); font-size: 0.75rem;">Transparency Ledger</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

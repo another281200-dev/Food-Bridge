@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — FoodBridge Lucknow</title>
+  <meta name="description" content="Log in to your FoodBridge account to manage food donations, track pickup logistics, and connect with verified Lucknow recovery hubs.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modern2026.css">
+
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1E2A5E 0%, #0F172A 50%, #1E2A5E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(21, 128, 61, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .auth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      width: 100%;
+      max-width: 920px;
+      background: #FFFFFF;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 1;
+    }
+
+    .auth-brand-panel {
+      background: linear-gradient(160deg, #15803D 0%, #166534 60%, #14532D 100%);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-brand-panel::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .auth-brand-panel::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .auth-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-brand-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      backdrop-filter: blur(4px);
+    }
+
+    .auth-brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+
+    .auth-brand-tagline {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .auth-brand-desc {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .auth-stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .auth-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .auth-stat-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+      flex-shrink: 0;
+    }
+
+    .auth-form-panel {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-form-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1E2A5E;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .auth-form-subtitle {
+      font-size: 0.9375rem;
+      color: #6B7280;
+      margin-bottom: 2rem;
+    }
+
+    .auth-role-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      background: #F3F4F6;
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 1.75rem;
+    }
+
+    .auth-role-btn {
+      padding: 0.5rem 0.5rem;
+      border-radius: 7px;
+      border: none;
+      background: transparent;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #6B7280;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .auth-role-btn.active {
+      background: #FFFFFF;
+      color: #1E2A5E;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-field {
+      margin-bottom: 1.1rem;
+    }
+
+    .auth-field label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.4rem;
+    }
+
+    .auth-field input {
+      width: 100%;
+      padding: 0.7rem 0.95rem;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 10px;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: #111827;
+      background: #FFFFFF;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .auth-field input:focus {
+      border-color: #15803D;
+      box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12);
+    }
+
+    .auth-field-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+    }
+
+    .auth-forgot-link {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #15803D;
+      text-decoration: none;
+    }
+
+    .auth-forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .auth-submit-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: #15803D;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(21, 128, 61, 0.35);
+      transition: all 0.18s ease;
+      margin-bottom: 1.25rem;
+    }
+
+    .auth-submit-btn:hover {
+      background: #166534;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(21, 128, 61, 0.45);
+    }
+
+    .auth-divider {
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #9CA3AF;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 42%;
+      height: 1px;
+      background: #E5E7EB;
+    }
+
+    .auth-divider::before { left: 0; }
+    .auth-divider::after { right: 0; }
+
+    .auth-switch-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6B7280;
+    }
+
+    .auth-switch-text a {
+      color: #15803D;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .auth-switch-text a:hover {
+      text-decoration: underline;
+    }
+
+    .auth-back-link {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      z-index: 10;
+      transition: color 0.15s ease;
+    }
+
+    .auth-back-link:hover {
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 768px) {
+      .auth-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+
+      .auth-brand-panel {
+        padding: 2rem 1.75rem 1.5rem;
+      }
+
+      .auth-brand-tagline {
+        font-size: 1.35rem;
+      }
+
+      .auth-stat-row {
+        display: none;
+      }
+
+      .auth-form-panel {
+        padding: 2rem 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="auth-back-link" id="back-home-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    Back to FoodBridge
+  </a>
+
+  <div class="auth-page">
+    <div class="auth-grid">
+
+      <div class="auth-brand-panel">
+        <div>
+          <a href="index.html" class="auth-brand-logo">
+            <div class="auth-brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <span class="auth-brand-name">FoodBridge</span>
+          </a>
+
+          <div class="auth-brand-tagline">Rescue food.<br>Feed Lucknow.</div>
+          <p class="auth-brand-desc">
+            Join thousands of donors, langars, and volunteers who use FoodBridge to redirect surplus food before it goes to waste — one pickup at a time.
+          </p>
+        </div>
+
+        <div class="auth-stat-row">
+          <div class="auth-stat-item">
+            <span class="auth-stat-dot"></span>
+            <span>48,200+ meals rescued across Lucknow in 2026</span>
+          </div>
+          <div class="auth-stat-item">
+            <span class="auth-stat-dot"></span>
+            <span>5 verified community hubs actively receiving donations</span>
+          </div>
+          <div class="auth-stat-item">
+            <span class="auth-stat-dot"></span>
+            <span>AI freshness scanning on every listing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-form-panel">
+        <h1 class="auth-form-title">Welcome back</h1>
+        <p class="auth-form-subtitle">Log in to your FoodBridge account</p>
+
+        <div class="auth-role-toggle" role="group" aria-label="Account type">
+          <button type="button" class="auth-role-btn active" id="role-donor" onclick="setRole('donor', this)">Donor</button>
+          <button type="button" class="auth-role-btn" id="role-ngo" onclick="setRole('ngo', this)">NGO / Langar</button>
+          <button type="button" class="auth-role-btn" id="role-admin" onclick="setRole('admin', this)">Admin</button>
+        </div>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <div class="auth-field">
+            <label for="login-email">Email address</label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="yourname@example.com"
+            >
+          </div>
+
+          <div class="auth-field">
+            <div class="auth-field-row" style="margin-bottom: 0.4rem;">
+              <label for="login-password" style="margin-bottom: 0;">Password</label>
+              <a href="#" class="auth-forgot-link" id="forgot-password-link">Forgot password?</a>
+            </div>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              required
+              autocomplete="current-password"
+              placeholder="Enter your password"
+            >
+          </div>
+
+          <button type="submit" class="auth-submit-btn" id="login-submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            Log In
+          </button>
+        </form>
+
+        <p class="auth-switch-text">
+          Don't have an account?
+          <a href="signup.html" id="go-signup-link">Create one free &rarr;</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function setRole(role, btn) {
+      document.querySelectorAll('.auth-role-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('login-submit-btn');
+      btn.textContent = 'Logging in…';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1200);
+    }
+
+    document.getElementById('forgot-password-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Password reset link will be sent to your registered email address.');
+    });
+  </script>
+</body>
+</html>

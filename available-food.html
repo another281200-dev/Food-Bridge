@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Food in Lucknow — FoodBridge Surplus Rescue Directory</title>
+  <meta name="description" content="Browse verified surplus food available right now across Lucknow, Uttar Pradesh from banquets, Dubagga mandi, and bakeries for immediate langar & shelter pickup.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/claymorphism.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modern2026.css">
+</head>
+<body>
+
+  <header class="site-header" id="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link" id="brand-logo">
+        <div class="brand-icon-box" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span>FoodBridge</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="main-nav-links">
+          <li><a href="available-food.html" class="nav-link active">Available Food</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li><a href="map.html" class="nav-link">Lucknow Map</a></li>
+          <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+          <li><a href="safety.html" class="nav-link">Food Safety</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn-nav-ghost" id="nav-login-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Log In</span>
+        </a>
+        <a href="signup.html" class="btn-nav-signup" id="nav-signup-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <line x1="19" y1="8" x2="19" y2="14"></line>
+            <line x1="22" y1="11" x2="16" y2="11"></line>
+          </svg>
+          <span>Sign Up</span>
+        </a>
+
+        <a href="donate.html" class="btn btn-accent" id="nav-btn-donate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <span>Donate Food</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 3.5rem 0 5rem;">
+    <div class="container">
+      
+      <div style="margin-bottom: 2.5rem;" class="reveal-init">
+        <div class="hero-eyebrow">
+          <span class="human-pulse-dot" aria-hidden="true"></span>
+          <span>Lucknow Surplus Directory (Uttar Pradesh)</span>
+        </div>
+        <h1 style="font-size: 2.75rem; margin-bottom: 0.5rem; color: var(--color-text-main);">
+          Available Food in Lucknow Right Now
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--color-text-muted); max-width: 65ch;">
+          Verified batches of fresh surplus posted by certified wedding banquets, Dubagga mandi vendors, and bakeries. Local langars and shelters can reserve batches immediately for pickup.
+        </p>
+      </div>
+
+      <div class="feed-toolbar reveal-init">
+        <div>
+          <span style="font-size: 0.9375rem; color: var(--color-text-muted);">
+            Showing <strong id="visible-count-text" style="color: var(--color-brand-primary);">3</strong> available food rescue batches
+          </span>
+        </div>
+
+        <div class="category-chips-row">
+          <button type="button" class="glass-pill cat-filter-btn active" data-cat="all">
+            <span>All Categories</span>
+          </button>
+          <button type="button" class="glass-pill cat-filter-btn" data-cat="produce">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+              <path d="M12 2v20"></path>
+            </svg>
+            <span>Mandi Vegetables</span>
+          </button>
+          <button type="button" class="glass-pill cat-filter-btn" data-cat="bakery">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12h8"></path>
+            </svg>
+            <span>Bakery & Breads</span>
+          </button>
+          <button type="button" class="glass-pill cat-filter-btn" data-cat="prepared">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            </svg>
+            <span>Banquet Meals</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="donations-grid" id="feed-container">
+        
+        <article class="feed-card card-hover-lift reveal-init" data-cat="produce">
+          <div class="feed-card-image">
+            <img 
+              src="assets/images/lucknow-mandi-produce.jpg" 
+              alt="Fresh spinach, tomatoes, cauliflower and green peas in wicker tokris at Dubagga Sabzi Mandi, Lucknow" 
+              class="feed-card-img"
+            >
+            <div class="feed-card-badge">
+              <span class="status-badge status-badge-available">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Available • Approved
+              </span>
+            </div>
+            <div class="feed-card-temp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+              </svg>
+              <span>Fresh 18°C</span>
+            </div>
+          </div>
+
+          <div class="feed-card-body">
+            <div class="feed-card-donor">Dubagga Farmers Co-op, Hardoi Rd • 2.5 km away</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: #15803D; background: #DCFCE7; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                AI Freshness: 94%
+              </span>
+              <span style="font-size: 0.75rem; font-weight: 700; color: #1E2A5E; background: rgba(30, 42, 94, 0.08); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                AI Screened: 98% Pass
+              </span>
+            </div>
+            <h3 class="feed-card-title">Dubagga Mandi Fresh Vegetables</h3>
+            
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Pickup window: <strong>Today, 3:30 PM – 6:30 PM</strong></span>
+            </div>
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Gate #3, Dubagga Wholesale Mandi, Lucknow</span>
+            </div>
+
+            <div class="feed-card-footer">
+              <div>
+                <div class="feed-quantity">120 kg (4 Tokris)</div>
+                <span class="rupee-val-tag">Worth ₹6,800 • ₹0 for Langar</span>
+              </div>
+              <button type="button" class="btn btn-primary btn-open-reserve" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                Reserve Batch
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="feed-card card-hover-lift reveal-init" data-cat="prepared">
+          <div class="feed-card-image">
+            <img 
+              src="assets/images/lucknow-community-feast.jpg" 
+              alt="Nutritious fresh pulao, dal, and warm chapatis being served in Lucknow" 
+              class="feed-card-img"
+            >
+            <div class="feed-card-badge">
+              <span class="status-badge status-badge-pending">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Pending Pickup • Urgent
+              </span>
+            </div>
+            <div class="feed-card-temp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+              </svg>
+              <span>Hot Hold 65°C</span>
+            </div>
+          </div>
+
+          <div class="feed-card-body">
+            <div class="feed-card-donor">Oudh Heritage Banquet, Hazratganj • 1.8 km away</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: #15803D; background: #DCFCE7; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                AI Freshness: 96%
+              </span>
+              <span style="font-size: 0.75rem; font-weight: 700; color: #1E2A5E; background: rgba(30, 42, 94, 0.08); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                AI Screened: 99% Pass
+              </span>
+            </div>
+            <h3 class="feed-card-title">Fresh Shahi Pulao, Dal & Rotis</h3>
+            
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Pickup window: <strong>Urgent • By 5:00 PM</strong></span>
+            </div>
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Hazratganj Main Market, Kitchen Loading Bay</span>
+            </div>
+
+            <div class="feed-card-footer">
+              <div>
+                <div class="feed-quantity">85 Warm Thalis</div>
+                <span class="rupee-val-tag">Worth ₹12,750 • ₹0 for Langar</span>
+              </div>
+              <button type="button" class="btn btn-primary btn-open-reserve" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                Reserve Batch
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="feed-card card-hover-lift reveal-init" data-cat="bakery">
+          <div class="feed-card-image">
+            <img 
+              src="assets/images/bakery-surplus.jpg" 
+              alt="Fresh artisan bakery breads, pav, and rusk in Lucknow bakery" 
+              class="feed-card-img"
+            >
+            <div class="feed-card-badge">
+              <span class="status-badge status-badge-available">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Available • Approved
+              </span>
+            </div>
+            <div class="feed-card-temp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="5"></circle>
+              </svg>
+              <span>Room Temp</span>
+            </div>
+          </div>
+
+          <div class="feed-card-body">
+            <div class="feed-card-donor">Hazratganj Oven Bakery, Gomti Nagar • 3.2 km away</div>
+            <h3 class="feed-card-title">Fresh Bakery Breads & Pav Packs</h3>
+            
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Pickup window: <strong>Today, 4:00 PM – 7:00 PM</strong></span>
+            </div>
+            <div class="feed-meta-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Patrakarpuram, Gomti Nagar, Lucknow</span>
+            </div>
+
+            <div class="feed-card-footer">
+              <div>
+                <div class="feed-quantity">110 Loaves & Pav Packs</div>
+                <span class="rupee-val-tag">Worth ₹4,200 • ₹0 for Langar</span>
+              </div>
+              <button type="button" class="btn btn-primary btn-open-reserve" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                Reserve Batch
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top: 4rem; background: #FFFFFF; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;" class="reveal-init">
+        <div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Do you manage a langar, ashram, or night shelter in Lucknow?</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9375rem;">
+            Sign up to receive automated WhatsApp alerts whenever fresh surplus matches your intake timing across Lucknow.
+          </p>
+        </div>
+        <a href="how-it-works.html" class="btn btn-secondary">
+          Register Lucknow Langar
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <div class="glass-modal-backdrop" id="reservation-modal" role="dialog" aria-modal="true" aria-labelledby="modal-food-title">
+    <div class="modal-window">
+      <button type="button" class="modal-close" id="modal-close-button" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="12" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <span class="human-badge human-badge-green" style="font-size: 0.75rem;">
+          Verified Lucknow Food Rescue
+        </span>
+      </div>
+
+      <h3 id="modal-food-title" style="font-size: 1.45rem; margin-bottom: 0.25rem;">Dubagga Mandi Fresh Vegetables</h3>
+      <div id="modal-donor-name" style="font-size: 0.9375rem; color: var(--color-brand-primary); font-weight: 700; margin-bottom: 1.25rem;">
+        Dubagga Farmers Co-op, Lucknow
+      </div>
+
+      <div style="background: var(--color-canvas-bg); border: 1px solid var(--color-border-subtle); border-radius: 12px; padding: 1.15rem; margin-bottom: 1.25rem; font-size: 0.875rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="color: var(--color-text-muted);">Batch Net Weight:</span>
+          <strong id="modal-food-qty" style="color: var(--color-text-main);">120 kg</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="color: var(--color-text-muted);">Commercial Value:</span>
+          <strong id="modal-food-val" style="color: var(--color-brand-primary);">Worth ₹6,800 • ₹0 for Langar</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--color-text-muted);">Packaging:</span>
+          <strong>Traditional clean wicker tokris</strong>
+        </div>
+      </div>
+
+      <p style="font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+        By reserving this batch, you confirm your langar or volunteer courier will arrive within the designated pickup window. All donations are legally protected under the FSSAI Surplus Food Regulations and the Good Samaritan Act.
+      </p>
+
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem;">
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('reservation-modal').classList.remove('active'); document.body.style.overflow='';" style="font-size: 0.875rem;">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" id="confirm-reserve-btn" style="font-size: 0.875rem;">
+          Confirm Reservation
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <div class="footer-brand">FoodBridge Lucknow</div>
+          <p style="font-size: 0.875rem; line-height: 1.6; max-width: 32ch; margin-bottom: 1rem;">
+            A grassroots food recovery network connecting surplus food from Lucknow banquet halls, bakeries, and mandis with local families, langars, and community shelters.
+          </p>
+          <div style="font-size: 0.8125rem; color: #D1DDD5;">
+            Serving Lucknow District, Uttar Pradesh • Supported by civic food recovery volunteers
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links-list">
+            <li><a href="available-food.html">Available Food</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="map.html">Lucknow Map</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="safety.html">Food Safety</a></li>
+            <li><a href="donate.html">Donate Food</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Lucknow Hubs</h4>
+          <ul class="footer-links-list">
+            <li><a href="map.html">Chowk Langar</a></li>
+            <li><a href="map.html">Gomti Nagar 1090</a></li>
+            <li><a href="map.html">Hazratganj Relief</a></li>
+            <li><a href="map.html">Dubagga Sabzi Mandi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Community</h4>
+          <p style="font-size: 0.8125rem; line-height: 1.5; margin-bottom: 1rem;">
+            Questions or need help setting up a food donation route in your neighborhood?
+          </p>
+          <a href="mailto:lucknow@foodbridge.org" class="btn btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.85rem;">
+            Contact Lucknow Team
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 FoodBridge Lucknow (Uttar Pradesh). Zero food waste, zero hunger.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="safety.html" style="color: inherit; text-decoration: none;">FSSAI Compliance</a>
+          <a href="safety.html" style="color: inherit; text-decoration: none;">Good Samaritan Act</a>
+          <a href="safety.html" style="color: inherit; text-decoration: none;">Nonprofit Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
